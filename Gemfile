@@ -59,7 +59,7 @@ group :development do
   gem 'capistrano-rails'
 
   # Remove the following if your server does not use RVM
-  #gem 'capistrano-rvm'
+  gem 'capistrano-rvm'
 end
 
 group :test do
@@ -73,4 +73,3 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'rvm-capistrano'
