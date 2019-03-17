@@ -38,6 +38,9 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-set :rvm_ruby_version, '2.4.4'
+#set :rvm_ruby_version, '2.4.4'
+set :rvm_ruby_string, :local        # use the same ruby as used locally for deployment
 
 before 'deploy:check:linked_files', 'config:push'
+before 'deploy', 'rvm:install_rvm'  # install/update RVM
+before 'deploy', 'rvm:install_ruby' # install Ruby and create gemset (both if missing)
