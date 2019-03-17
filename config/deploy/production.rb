@@ -8,7 +8,7 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 server "ec2-13-236-60-170.ap-southeast-2.compute.amazonaws.com", user: "ubuntu", roles: %w{app db web}
 
-
+set :default_env, { 'PASSENGER_INSTANCE_REGISTRY_DIR' => '/home/ubuntu/passenger_temp' }
 # role-based syntax
 # ==================
 
