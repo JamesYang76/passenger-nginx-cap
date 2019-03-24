@@ -40,5 +40,8 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 set :rvm_ruby_version, '2.4.4'
 
+ssh_command = "ssh ubuntu@ec2-54-66-149-18.ap-southeast-2.compute.amazonaws.com -W %h:%p"
+set :ssh_options, proxy: Net::SSH::Proxy::Command.new(ssh_command)
+
 
 before 'deploy:check:linked_files', 'config:push'

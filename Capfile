@@ -34,6 +34,7 @@ require "capistrano/rails/migrations"
 require "capistrano/passenger"
 
 require 'capistrano/upload-config'
+require 'net/ssh/proxy/command'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
